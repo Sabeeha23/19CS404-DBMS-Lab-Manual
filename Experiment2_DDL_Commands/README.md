@@ -105,123 +105,162 @@ CREATE TABLE Table_Name (
 
 **Question 1**
 --
--- Paste Question 1 here
+![image](https://github.com/user-attachments/assets/cdea5005-6352-404c-a471-d6f1dd0698b3)
 
-```sql
--- Paste your SQL code below for Question 1
+```
+UPDATE Employees
+SET salary = salary + 500, 
+    email = 'updated'
+WHERE job_id = 'SA_REP' 
+AND commission_pct > 0.15;
+
 ```
 
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/4891dc75-f201-4f25-b34b-0bacfc848ff6)
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+![image](https://github.com/user-attachments/assets/b339d292-e87b-49b8-939f-efae6fde7fed)
+
 
 ```sql
--- Paste your SQL code below for Question 2
+UPDATE SALES
+SET total_sell_price = quantity * sell_price
+WHERE product_id = 10;
 ```
 
 **Output:**
 
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/4e40977f-bc14-4b49-afa7-8b051be2c1e1)
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+![image](https://github.com/user-attachments/assets/54c4b87b-f5d3-4b94-80ce-a026b14b2629)
 
 ```sql
--- Paste your SQL code below for Question 3
+UPDATE products
+SET product_name = 'Grapefruit'
+WHERE product_id = 4;
 ```
 
 **Output:**
 
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/d28f8d97-ef55-47f9-bd29-9188ed3ccdce)
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+![image](https://github.com/user-attachments/assets/4de4e4bf-b81f-449a-bf85-3022005d524b)
+
 
 ```sql
--- Paste your SQL code below for Question 4
+UPDATE Products
+SET quantity = quantity * 1.10;
+
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/332da780-707d-40f8-806e-7dc2f5d25011)
 
-![Output4](output.png)
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+![image](https://github.com/user-attachments/assets/dc9be2ee-7c07-45cd-b2ba-e297f44ba82d)
+
 
 ```sql
--- Paste your SQL code below for Question 5
+UPDATE Customer
+SET grade = 5
+WHERE city = 'Chennai';
 ```
 
 **Output:**
 
-![Output5](output.png)
+![image](https://github.com/user-attachments/assets/969a302b-e2e1-43dc-9fdf-a7b5244517a2)
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+![image](https://github.com/user-attachments/assets/75be09fd-9964-4f48-9d28-baf3ee528450)
+
 
 ```sql
--- Paste your SQL code below for Question 6
+DELETE FROM Customer
+WHERE GRADE = 3 
+AND CUST_NAME LIKE '%BBB%' 
+AND PAYMENT_AMT > 2000;
 ```
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/e9bf16d8-f1ea-43c3-aa7e-96b7441e0e1e)
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+![image](https://github.com/user-attachments/assets/71a18510-9981-4bdf-a5e1-36d1313f54f6)
+
 
 ```sql
--- Paste your SQL code below for Question 7
+DELETE FROM Customer
+WHERE WORKING_AREA = 'New York';
 ```
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/3653adac-3102-4f40-bbf0-cbaa70a72ede)
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+![image](https://github.com/user-attachments/assets/f6ed5596-bea6-4ac9-bf16-9bebf774f5b2)
+
 
 ```sql
--- Paste your SQL code below for Question 8
+DELETE FROM Customer
+WHERE GRADE = 2;
 ```
 
 **Output:**
 
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/f19e6569-577d-4db1-89b4-e5273f7aeb8c)
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+![image](https://github.com/user-attachments/assets/80f175e9-d280-430a-a631-febb6be5ff4e)
 
 ```sql
--- Paste your SQL code below for Question 9
+DELETE FROM Customer
+WHERE GRADE = 2 
+AND CUST_NAME LIKE 'M%' 
+AND PAYMENT_AMT < 3000;
 ```
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/2b849eda-3912-4362-9d78-adf50a0914ea)
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+![image](https://github.com/user-attachments/assets/ec3bbf86-2ecb-496b-8e06-0228c6294b3c)
+
 
 ```sql
--- Paste your SQL code below for Question 10
+DELETE FROM Customer
+WHERE OPENING_AMT BETWEEN 4000 AND 6000;
+
 ```
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/9274b244-b319-406c-b19b-330a9b245514)
 
 
 ## RESULT
