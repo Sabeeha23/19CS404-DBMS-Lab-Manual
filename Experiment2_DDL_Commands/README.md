@@ -105,123 +105,240 @@ CREATE TABLE Table_Name (
 
 **Question 1**
 --
--- Paste Question 1 here
+Write a SQL query to Add a new column State as text in the Student_details table.
+![image](https://github.com/user-attachments/assets/6c8e5fd1-3ebb-4bb9-a386-badd70a33509)
+
 
 ```sql
--- Paste your SQL code below for Question 1
+ALTER TABLE Student_details ADD COLUMN State TEXT;
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/d7d4a4b8-765b-46bc-ab59-e8a7044b3bd8)
 
-![Output1](output.png)
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+Insert the below data into the Employee table, allowing the Department and Salary columns to take their default values. 
+![image](https://github.com/user-attachments/assets/adc8254f-a91d-47b1-be4a-58a1ff4986fb)
 
 ```sql
--- Paste your SQL code below for Question 2
+INSERT INTO Employee(EmployeeID,Name,Position)
+
+VALUES('4','Emily White','Analyst');
 ```
 
 **Output:**
 
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/b8132679-59de-4bfb-8939-c5f913a70895)
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+Insert all employees from Former_employees into Employee
+![image](https://github.com/user-attachments/assets/5e568b2c-c0f9-4b74-b67a-7c39ea7a7210)
+
 
 ```sql
--- Paste your SQL code below for Question 3
+INSERT into Employee(EmployeeID,Name,Department,Salary)
+
+SELECT EmployeeID,Name,Department,Salary FROM Former_employees;
 ```
 
 **Output:**
 
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/2c6432ef-4a7f-44a9-b5ac-c5b1fa302459)
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+Create a table named Customers with the following columns:
+![image](https://github.com/user-attachments/assets/6ce109be-a15c-433e-8fc9-ebb44f891b8d)
 
 ```sql
--- Paste your SQL code below for Question 4
+CREATE TABLE Customers(
+
+CustomerID INTEGER,
+
+Name TEXT,
+
+Email TEXT,
+
+JoinDate DATETIME );
 ```
 
 **Output:**
 
-![Output4](output.png)
+![image](https://github.com/user-attachments/assets/085a42a0-dca9-4617-b028-dc60839fb7ad)
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+Write an SQL query to add a new column email of type TEXT to the Student_details table, and ensure that this column cannot contain NULL values and make default value as 'Invalid'
+![image](https://github.com/user-attachments/assets/d0852d99-cde7-4f06-a5b5-5b9ba068976a)
+
 
 ```sql
--- Paste your SQL code below for Question 5
+ALTER TABLE Student_details
+
+ADD COLUMN email TEXT not NULL default'Invalid';
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/9063bc1f-6afe-4033-910f-a944805122ff)
 
-![Output5](output.png)
 
 **Question 6**
 ---
--- Paste Question 6 here
+Create a table named Invoices with the following constraints:
+
+InvoiceID as INTEGER should be the primary key.
+
+InvoiceDate as DATE.
+
+Amount as REAL should be greater than 0.
+
+DueDate as DATE should be greater than the InvoiceDate.
+
+OrderID as INTEGER should be a foreign key referencing Orders(OrderID).
+![image](https://github.com/user-attachments/assets/a253b236-d623-44b1-8829-5ed146c0d98d)
+
 
 ```sql
--- Paste your SQL code below for Question 6
+CREATE TABLE Invoices(
+
+InvoiceID INTEGER primary key,
+
+InvoiceDate DATE,
+
+Amount REAL CHECK(Amount>=0),
+
+DueDate DATE CHECK(DueDate>=InvoiceDate),
+
+OrderID INTEGER,
+
+foreign key (OrderID) references Orders(OrderID) );
 ```
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/7298394d-1e47-4f73-9eca-1492c07dafd7)
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+Create a table named Products with the following constraints:
+
+ProductID should be the primary key.
+
+ProductName should be NOT NULL.
+
+Price is of real datatype and should be greater than 0.
+
+Stock is of integer datatype and should be greater than or equal to 0.
+![image](https://github.com/user-attachments/assets/e34b7531-9035-41cd-a34e-5a005a3c7ed1)
+
 
 ```sql
--- Paste your SQL code below for Question 7
+CREATE TABLE Products(
+
+ProductID INTEGER primary key,
+
+ProductName not NULL,
+
+Price REAL CHECK (Price>0),
+
+Stock INTEGER CHECK (Stock>=0) );
 ```
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/fdaacaf5-b729-4e62-b928-719d901cd7fc)
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+Create a table named Orders with the following constraints:
+
+OrderID as INTEGER should be the primary key.
+
+OrderDate as DATE should be not NULL.
+
+CustomerID as INTEGER should be a foreign key referencing Customers(CustomerID).
+![image](https://github.com/user-attachments/assets/49e5809c-b081-401d-a79d-0c7233e701af)
+
+
 
 ```sql
--- Paste your SQL code below for Question 8
+CREATE TABLE Orders(
+
+OrderID INTEGER primary key,
+
+OrderDate DATE not NULL,
+
+CustomerID INTEGER,
+
+foreign key (CustomerID) references Customers(CustomerID) );
 ```
 
 **Output:**
 
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/2551c47b-8760-46d4-a3b6-05bb45d67f09)
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+Create a table named Department with the following constraints:
+
+DepartmentID as INTEGER should be the primary key.
+
+DepartmentName as TEXT should be unique and not NULL.
+
+Location as TEXT.
+![image](https://github.com/user-attachments/assets/a1b5f5c6-c9a0-43e9-813e-a18ab2e5d96a)
+
 
 ```sql
--- Paste your SQL code below for Question 9
+CREATE TABLE Department(
+
+DepartmentID INTEGER primary key,
+
+DepartmentName TEXT UNIQUE not NULL,
+
+Location TEXT );
 ```
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/e38c47f6-3a4b-41c5-af2f-ed51f3f8b87f)
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+In the Books table, insert a record where some fields are NULL, another record where all fields are filled without any NULL values, and a third record where some fields are filled, and others are left as NULL.
+
+![image](https://github.com/user-attachments/assets/fca258dc-984f-49f8-878d-aa7065fc8924)
+
 
 ```sql
--- Paste your SQL code below for Question 10
+INSERT INTO Books(ISBN, Title, Author, Publisher, Year)
+
+VALUES('978-1234567890', 'Introduction to AI', 'John Doe', null, null);
+
+INSERT INTO Books(ISBN, Title, Author, Publisher, Year)
+
+VALUES('978-9876543210', 'Deep Learning', 'Jane Doe', 'TechPress', '2022');
+
+INSERT INTO Books(ISBN, Title, Author, Publisher, Year)
+
+VALUES('978-1122334455', 'Cybersecurity Essentials', 'Alice Smith', null, 2021);
 ```
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/b27a4f29-dfa2-4253-994a-8cb401a83b90)
+
 
 
 ## RESULT
